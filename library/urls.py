@@ -18,6 +18,6 @@ urlpatterns = [
     path("admin_login/", views.admin_login, name="admin_login"),
     path("logout/", views.Logout, name="logout"),
 
-    path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
-    path("delete_student/<int:myid>/", views.delete_student, name="delete_student"),
+    path("delete_book/<str:isbn>", views.delete_book, name="delete_book"),
+    path("delete_student/<str:id>", views.delete_student, name="delete_student"),
 ]

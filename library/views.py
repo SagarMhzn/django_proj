@@ -27,11 +27,14 @@ def add_book(request):
 @login_required(login_url = '/admin_login')
 def view_books(request):
     books = Book.objects.all()
+
+    print(books)
     return render(request, "view_books.html", {'books':books})
 
 @login_required(login_url = '/admin_login')
 def view_students(request):
     students = Student.objects.all()
+    print(students[0].id)
     return render(request, "view_students.html", {'students':students})
 
 @login_required(login_url = '/admin_login')
@@ -116,13 +119,14 @@ def edit_profile(request):
         return render(request, "edit_profile.html", {'alert':alert})
     return render(request, "edit_profile.html")
 
-def delete_book(request, myid):
-    books = Book.objects.filter(id=myid)
+def delete_book(request, isbn):
+    books = Book.objects.get(isbn=isbn)
     books.delete()
     return redirect("/view_books")
 
-def delete_student(request, myid):
-    students = Student.objects.filter(id=myid)
+def delete_student(request, id):
+    students = Student.objects.get(id=id)
+    print(students)
     students.delete()
     return redirect("/view_students")
 
