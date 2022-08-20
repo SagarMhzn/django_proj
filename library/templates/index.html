@@ -1,0 +1,31 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="p-4 bg-light ">
+    <div class="container-fluid py-3">
+      <h1 class="display-5 fw-bold" style="text-align:center;">Welcome to Library Management System</h1>
+    </div>
+
+    <br>
+    <div class="container" >
+  <div class="row" style="max-width:90%;margin:auto;  display:flex; justify-content:space-around;">
+
+    <div class="col-lg-4 " style="display:flex; justify-content:center; align-items:center; flex-direction:column; background-color:#B26E63; padding:25px; border-radius:5px">
+
+            <img src="{% static 'admin.png' %}" width="50%" height="75%" alt="" style="margin:auto"><br><br>
+            <a class="btn  btn-lg" style="color:white; border:2px solid white;" href="/admin_login/" >Admin</a>
+
+    </div>
+
+    <div class="col-lg-4" style="display:flex; justify-content:center; align-items:center; flex-direction:column; background-color:#5F758E; padding:25px; border-radius:5px">
+      <img src="{% static 'students.png' %}" width="50%" height="75%" alt=""><br><br>
+      <a class="btn  btn-lg" style="color:white; border:2px solid white;" href="/student_login/">Student</a>
+    </div>
+
+  </div>
+  </div>
+</div>
+{% endblock %}
